@@ -34,8 +34,8 @@ const data = {
       },
       {
         "prenom": "Nicolas",
-        "typePrestation": "achat en boutique",
-        "commentaire": "Les chocolats du Palais du Chocolat ont été un véritable succès lors de notre mariage. Tout le monde a adoré les saveurs raffinées et les présentations élégantes. Un grand bravo à toute l'équipe.",
+        "typePrestation": "Achat en boutique",
+        "commentaire": "J'ai acheté une tablette de chocolat noir au Palais du Chocolat et je n'ai pas été déçu. Le chocolat était intense et puissant, avec des notes subtiles de fruits secs. Un vrai régal pour les papilles.",
         "note": 4
       },
       
@@ -70,4 +70,35 @@ const data = {
   document.getElementById('devisBtn').addEventListener('click', () => {
     alert('Demande de devis gratuit envoyée!');
   
+  });
+
+
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+  
+    // Get form values
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+  
+    // Simple validation
+    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+      alert("Please fill in all fields");
+      return false;
+    }
+  
+    // Here you can do something with the form data, like sending it to a server
+    // For demonstration purposes, let's just log the data to the console
+    console.log("Name: " + name);
+    console.log("Email: " + email);
+    console.log("Message: " + message);
+  
+    // Clear form fields
+    document.getElementById("name").value = '';
+    document.getElementById("email").value = '';
+    document.getElementById("message").value = '';
+  
+    // Display a success message
+    alert("Message sent successfully!");
   });
