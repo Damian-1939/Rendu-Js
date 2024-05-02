@@ -11,7 +11,8 @@
   "realisations": [
     {
       "nom": "Praliné croustillant",
-      "description": "Une ganache fondante au praliné, agrémentée d'éclats de noisettes croustillants. Un véritable délice pour les amateurs de chocolat et de fruits secs."
+      "description": "Une ganache fondante au praliné, agrémentée d'éclats de noisettes croustillants. Un véritable délice pour les amateurs de chocolat et de fruits secs.",
+      "image": "img/1.jpg"
     },
     {
       "nom": "Truffe au champagne",
