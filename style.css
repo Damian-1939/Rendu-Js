@@ -1,5 +1,8 @@
 body {
 background-color: aqua;
+font-family: Arial, sans-serif;
+  margin: 100;
+  padding: 100;
 }
 
 h1 {
@@ -16,21 +19,7 @@ p {
 }
 ul {
     font-size: 20px;
-    padding: 30px 0;
-}
-
-
-
-
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  text-align: center;
+    padding: 30px;
 }
 
 .form-group {
