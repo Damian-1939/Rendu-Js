@@ -1,7 +1,7 @@
 fetch('your/api/endpoint')
   .then(response => {
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('');
     }
     return response.json();
   })
@@ -33,16 +33,15 @@ fetch('your/api/endpoint')
   })
   .catch(error => {
     console.error('There was a problem with your fetch operation:', error);
-    // Gérer les erreurs ici, par exemple afficher un message d'erreur à l'utilisateur
   });
 
 
   document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting
+    event.preventDefault();
   
     // Get form values
     let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
+    let email = document.getElementById("emmail").value;
     let message = document.getElementById("message").value;
   
     // Simple validation
@@ -51,17 +50,16 @@ fetch('your/api/endpoint')
       return false;
     }
   
-    // Here you can do something with the form data, like sending it to a server
-    // For demonstration purposes, let's just log the data to the console
-    console.log("Name: " + name);
+
+    console.log("Names: " + name);
     console.log("Email: " + email);
     console.log("Message: " + message);
   
-    // Clear form fields
+  
     document.getElementById("name").value = '';
     document.getElementById("email").value = '';
     document.getElementById("message").value = '';
   
-    // Display a success message
-    alert("Message sent successfully!");
+ 
+    alert(");
   });
