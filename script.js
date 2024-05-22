@@ -1,65 +1,36 @@
-fetch('your/api/endpoint')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('');
-    }
-    return response.json();
-  })
+const descriptionContainer = document.querySelector(".cards");
+
+fetch("https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/patisserie.json")
+  .then(response => response.json())
   .then(data => {
-    // Utilisez les données ici
-    document.getElementById('nomCommercial').textContent = data.nomCommercial;
-    document.getElementById('phraseAccroche').textContent = data.phraseAccroche;
-
-    const beneficesList = document.getElementById('beneficesList');
-    data.listeBenefficesClients.forEach(benefice => {
-      const li = document.createElement('li');
-      li.textContent = benefice;
-      beneficesList.appendChild(li);
-    });
-
-    const realisationsList = document.getElementById('realisationsList');
-    data.realisations.forEach(realisation => {
-      const li = document.createElement('li');
-      li.innerHTML = `<strong>${realisation.nom}</strong>: ${realisation.description}`;
-      realisationsList.appendChild(li);
-    });
-
-    const temoignagesList = document.getElementById('temoignagesList');
-    data.temoignages.forEach(temoignage => {
-      const li = document.createElement('li');
-      li.innerHTML = `<strong>${temoignage.prenom}</strong> (${temoignage.typePrestation}) - Note: ${temoignage.note}<br>${temoignage.commentaire}`;
-      temoignagesList.appendChild(li);
-    });
-  })
-  .catch(error => {
-    console.error('There was a problem with your fetch operation:', error);
+    const cardDiv = document.createElement("div");
+    const descriptionParagraph = document.createElement("p");
+    descriptionParagraph.textContent = data.entreprise.produits[0].description;
+    const productImage = document.createElement("img");
+    productImage.src = "https://mapatisserie.fr/wp-content/uploads/2021/09/eclair-chocolat-P1080408-03-scaled.jpeg";
+    
+    cardDiv.classList.add("card");
+    cardDiv.appendChild(productImage);
+    cardDiv.appendChild(descriptionParagraph);
+    descriptionContainer.appendChild(cardDiv);
   });
 
+const formElement = document.querySelector("form");
+const firstNameInput = document.querySelector("#firstname");
+const lastNameInput = document.querySelector("#lastname");
+const commentInput = document.querySelector("#com");
+const submitButton = document.querySelector("#button");
 
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+formElement.addEventListener("submit", (event) => {
+  event.preventDefault();
   
-    // Get form values
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("emmail").value;
-    let message = document.getElementById("message").value;
+  console.log(lastNameInput.value);
+  console.log(firstNameInput.value);
+  console.log(commentInput.value);
   
-    // Simple validation
-    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-      alert("Please fill in all fields");
-      return false;
-    }
+  const messageDiv = document.createElement("div");
+  const heading = document.createElement("h1");
+  heading.textContent = "Hello";
   
-
-    console.log("Names: " + name);
-    console.log("Email: " + email);
-    console.log("Message: " + message);
-  
-  
-    document.getElementById("name").value = '';
-    document.getElementById("email").value = '';
-    document.getElementById("message").value = '';
-  
- 
-    alert(");
-  });
+  messageDiv.appendChild(heading);
+});

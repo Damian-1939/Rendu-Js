@@ -1,45 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palais du Chocolat</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Chocolaterie Artisanale</title>
 </head>
 <body>
-
-<h1 id="nomCommercial"></h1>
-<p id="phraseAccroche"></p>
-<button id="devisBtn">Devis gratuit</button>
-
-<h2>Bénéfices pour les clients:</h2>
-<ul id="beneficesList">
-</ul>
-
-<h2>Réalisations:</h2>
-<ul id="realisationsList">
-</ul>
-
-<h2>Témoignages:</h2>
-<ul id="temoignagesList">
-</ul>
-
-<form id="contact-form" method="post" action="#">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-<script src="script.js"></script>
- 
+    <header>
+        <nav class="navbar">
+            <h1 class="site-title">Titre</h1>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <h2 class="section-title">Chocolaterie</h2>
+            <p class="section-subtitle">dans votre boutique</p>
+        </section>
+        <section class="products">
+            <div class="product-card">
+                <img src="img/4.jpg" alt="Produit merveilleux" class="product-image">
+                <p class="product-description">Produit<br>Crème<br>Chocolat.</p>
+            </div>
+        </section>
+        <section class="more-products">
+            <a href="http://127.0.0.1:5500/assets2/index2.html" class="product-link">Voir toutes nos pâtisseries</a>
+        </section>
+        <section class="presentation">
+            <img src="https://actufood.fr/wp-content/uploads/2016/05/img_5569.jpg" alt="Présentation" class="presentation-image">
+        </section>
+    </main>
+    <footer>
+        <section class="craftsmanship">
+            <p class="craftsmanship-intro">Un savoir-faire</p>
+            <h1 class="craftsmanship-title">artisanal</h1>
+            <p class="craftsmanship-description">Notre maison met à l'honneur les spécialités traditionnelles des Flandres, dont le merveilleux. Nos produits sont fabriqués dans chaque boutique de manière artisanale à la vue du client. Le Merveilleux de Frédéric Vaucamps, est un dessert incontournable de notre établissement. Son secret ? une meringue inimitable qui confère à cette pâtisserie toute sa légèreté… A l’origine au chocolat, le merveilleux se décline maintenant dans d’autres saveurs. On le retrouve dans plusieurs tailles : de la version mini, à l'individuel jusqu'à la version gâteau à partager, il se déguste à toutes les occasions et s'adapte à toutes les envies.</p>
+        </section>
+        <section class="features">
+            <div class="feature-item">
+                <img src="https://auxmerveilleux.com/themes/aux-merveilleux/assets/img/local.svg" alt="Local" class="feature-icon">
+                <p class="feature-title yellow">Local</p>
+                <p class="feature-description">Tout est fait sur place</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://auxmerveilleux.com/themes/aux-merveilleux/assets/img/disponible.webp" alt="Disponible" class="feature-icon">
+                <p class="feature-title yellow">Disponible</p>
+                <p class="feature-description">Tout est prêt pour vous.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://auxmerveilleux.com/themes/aux-merveilleux/assets/img/artisant.svg" alt="Artisanat" class="feature-icon">
+                <p class="feature-title yellow">Artisanat</p>
+                <p class="feature-description">Tout est fait main, traditionnellement</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://auxmerveilleux.com/themes/aux-merveilleux/assets/img/gourmand.svg" alt="100% Gourmand" class="feature-icon">
+                <p class="feature-title yellow">100% Gourmand</p>
+                <p class="feature-description">Une saveur délicieuse et unique.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://auxmerveilleux.com/themes/aux-merveilleux/assets/img/magique.svg" alt="100% Magique" class="feature-icon">
+                <p class="feature-title yellow">100% magique</p>
+                <p class="feature-description">Ça c’est inexplicable !</p>
+            </div>
+        </section>
+        <section class="contact">
+            <form class="contact-form">
+                <h2 class="form-title">Contactez-nous</h2>
+                <div class="form-group">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="form-button">Envoyer</button>
+                </div>
+            </form>
+        </section>
+    </footer>
+    <script src="assets/script.js"></script>
 </body>
 </html>
