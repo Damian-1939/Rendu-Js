@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palais du Chocolat</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palais du Chocolat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="nomCommercial"></h1>
+    <p id="phraseAccroche"></p>
+    <button id="devisBtn">Devis gratuit</button>
 
-<h1 id="nomCommercial"></h1>
-<p id="phraseAccroche"></p>
-<button id="devisBtn">Devis gratuit</button>
+    <h2>Bénéfices pour les clients:</h2>
+    <ul id="beneficesList"></ul>
+    <img src="img/1.jpg" />
 
-<h2>Bénéfices pour les clients:</h2>
-<ul id="beneficesList">
-</ul>
+    <h2>Réalisations:</h2>
+    <ul id="realisationsList"></ul>
+    <img src="img/3.jpg" />
 
-<h2>Réalisations:</h2>
-<ul id="realisationsList">
-</ul>
+    <h2>Témoignages:</h2>
+    <ul id="temoignagesList"></ul>
 
-<h2>Témoignages:</h2>
-<ul id="temoignagesList">
-</ul>
+    <p>
+      Marie, 34 ans : "J'ai découvert cette chocolaterie lors d'une recherche de
+      cadeau pour mon anniversaire de mariage. Les boîtes de chocolats étaient
+      non seulement magnifiquement présentées, mais chaque bouchée était une
+      explosion de saveurs. Les Ferrero Rocher sont devenus mes préférés !"
+    </p>
+<br>
+<br>
+    <p>Camille, 22 ans :
+      "Je suis tombée amoureuse de cette chocolaterie dès ma première visite. Leurs vitrines regorgent de délices alléchants, et je ne peux jamais repartir les mains vides. Les Ferrero Rocher sont mon péché mignon absolu, et je trouve toujours une excuse pour en acheter une boîte (ou deux !) pour partager avec mes proches."</p>
 
-<form id="contact-form" method="post" action="#">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-<script src="script.js"></script>
- 
-</body>
+    <form id="contact-form" method="post" action="#">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
 </html>

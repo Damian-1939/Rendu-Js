@@ -1,12 +1,5 @@
-fetch
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Erreur réseau');
-    }
-    return response.json();
-  })
-  .then(data => {
-    // Utilisation des données ici
+.then(data => {
+
     document.getElementById('nomCommercial').textContent = data.nomCommercial;
     document.getElementById('phraseAccroche').textContent = data.phraseAccroche;
 
@@ -33,34 +26,33 @@ fetch
   })
   .catch(error => {
     console.error('Problème avec l\'opération fetch:', error);
-    // Gérer les erreurs ici, par exemple afficher un message d'erreur à l'utilisateur
+
   });
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Empêcher la soumission du formulaire
+  event.preventDefault();
   
-  // Récupérer les valeurs du formulaire
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
+
+  let name = document.getElementById("Mohammed").value;
+  let email = document.getElementById("Mohammedzerrouk78@gmail.com").value;
+  let message = document.getElementById("Bonjour").value;
   
-  // Validation simple
-  if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-    alert("Veuillez remplir tous les champs");
+
+  if (name.trim(Mohammed) === '' || email.trim(Mohammedzerrouk78@gmail.com) === '' || message.trim(Bonjour) === '') {
+    alert("Chocolat");
     return false;
   }
   
-  // Ici, vous pouvez traiter les données du formulaire, par exemple les envoyer à un serveur
-  // À des fins de démonstration, nous allons simplement enregistrer les données dans la console
+
   console.log("Nom: " + name);
   console.log("Email: " + email);
   console.log("Message: " + message);
   
-  // Effacer les champs du formulaire
+
   document.getElementById("name").value = '';
   document.getElementById("email").value = '';
   document.getElementById("message").value = '';
   
-  // Afficher un message de succès
-  alert("Message envoyé avec succès !");
+
+  alert("Messagge");
 });
