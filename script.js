@@ -1,36 +1,66 @@
-const descriptionContainer = document.querySelector(".cards");
-
-fetch("https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/patisserie.json")
-  .then(response => response.json())
+fetch
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erreur réseau');
+    }
+    return response.json();
+  })
   .then(data => {
-    const cardDiv = document.createElement("div");
-    const descriptionParagraph = document.createElement("p");
-    descriptionParagraph.textContent = data.entreprise.produits[0].description;
-    const productImage = document.createElement("img");
-    productImage.src = "https://mapatisserie.fr/wp-content/uploads/2021/09/eclair-chocolat-P1080408-03-scaled.jpeg";
-    
-    cardDiv.classList.add("card");
-    cardDiv.appendChild(productImage);
-    cardDiv.appendChild(descriptionParagraph);
-    descriptionContainer.appendChild(cardDiv);
+    // Utilisation des données ici
+    document.getElementById('nomCommercial').textContent = data.nomCommercial;
+    document.getElementById('phraseAccroche').textContent = data.phraseAccroche;
+
+    const beneficesList = document.getElementById('beneficesList');
+    data.listeBenefficesClients.forEach(benefice => {
+      const li = document.createElement('li');
+      li.textContent = benefice;
+      beneficesList.appendChild(li);
+    });
+
+    const realisationsList = document.getElementById('realisationsList');
+    data.realisations.forEach(realisation => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${realisation.nom}</strong>: ${realisation.description}`;
+      realisationsList.appendChild(li);
+    });
+
+    const temoignagesList = document.getElementById('temoignagesList');
+    data.temoignages.forEach(temoignage => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${temoignage.prenom}</strong> (${temoignage.typePrestation}) - Note: ${temoignage.note}<br>${temoignage.commentaire}`;
+      temoignagesList.appendChild(li);
+    });
+  })
+  .catch(error => {
+    console.error('Problème avec l\'opération fetch:', error);
+    // Gérer les erreurs ici, par exemple afficher un message d'erreur à l'utilisateur
   });
 
-const formElement = document.querySelector("form");
-const firstNameInput = document.querySelector("#firstname");
-const lastNameInput = document.querySelector("#lastname");
-const commentInput = document.querySelector("#com");
-const submitButton = document.querySelector("#button");
-
-formElement.addEventListener("submit", (event) => {
-  event.preventDefault();
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Empêcher la soumission du formulaire
   
-  console.log(lastNameInput.value);
-  console.log(firstNameInput.value);
-  console.log(commentInput.value);
+  // Récupérer les valeurs du formulaire
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
   
-  const messageDiv = document.createElement("div");
-  const heading = document.createElement("h1");
-  heading.textContent = "Hello";
+  // Validation simple
+  if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+    alert("Veuillez remplir tous les champs");
+    return false;
+  }
   
-  messageDiv.appendChild(heading);
+  // Ici, vous pouvez traiter les données du formulaire, par exemple les envoyer à un serveur
+  // À des fins de démonstration, nous allons simplement enregistrer les données dans la console
+  console.log("Nom: " + name);
+  console.log("Email: " + email);
+  console.log("Message: " + message);
+  
+  // Effacer les champs du formulaire
+  document.getElementById("name").value = '';
+  document.getElementById("email").value = '';
+  document.getElementById("message").value = '';
+  
+  // Afficher un message de succès
+  alert("Message envoyé avec succès !");
 });
